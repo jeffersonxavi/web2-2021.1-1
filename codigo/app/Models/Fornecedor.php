@@ -9,5 +9,9 @@ class Fornecedor extends Model
 {
     use HasFactory;
     protected $table = "fornecedores";
-    protected $fillable = ['nome', 'endereco', 'email'];
+    protected $guarded = [];
+    //protected $fillable = ['nome', 'endereco', 'email'];
+    function contato(){
+        return $this->hasMany(Contato::class, 'fornecedor_id', 'id');
+    }
 }
