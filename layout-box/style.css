@@ -1,0 +1,10 @@
+.box {
+    display: flex;
+    background-color: green;
+  }
+  .box div{
+    background-color: white;
+    margin: 100px;
+    padding: 150px;
+    font-size: 30px;
+  }

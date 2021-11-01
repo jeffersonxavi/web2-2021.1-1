@@ -1,0 +1,39 @@
+body {
+    background: #f5f7f8;
+}
+ 
+.grid-1 {
+  padding-top: 50px;
+  display: grid;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 2fr);
+  grid-gap: 20px;
+}
+ 
+.grid-1 div {
+  color: black;
+  font-size: 20px;
+  padding: 20px;
+  }  
+
+
+.item1 {
+  background: wheat;
+}
+.item2 {
+  background: wheat;
+}
+.item3 {
+  background: wheat;
+}
+.item4 {
+  background: red;
+}
+.item5 {
+  background: blue;
+}
+.item6 {
+  background: white;
+}
