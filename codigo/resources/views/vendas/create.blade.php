@@ -8,7 +8,7 @@
     <title>ADICIONAR venda</title>
 </head>
 <body>
-    <form action="{{route('vendasstore')}}" method="POST">
+    <form action="{{route('venda.store')}}" method="POST">
         @csrf
         <label for="valortotal">valortotal</label>
         <input type="text" name="valortotal" id="valortotal">

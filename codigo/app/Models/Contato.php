@@ -12,6 +12,9 @@ class Contato extends Model
     protected $fillable = ['telefone', 'instagram', 'telegram'];
     
     function fornecedor(){
-        return $this->belongsTo(Fornecedor::class, 'fornecedor_id', 'id');
+        return $this->belongsTo(Fornecedor::class, 'id_fornecedor', 'id');
+    }
+    function cliente(){
+        return $this->belongsTo(Cliente::class, 'id_cliente', 'id');
     }
 }

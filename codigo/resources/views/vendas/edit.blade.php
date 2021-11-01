@@ -8,7 +8,7 @@
     <title>EDITAR</title>
 </head>
 <body>
-    <form action="../update/{{$venda->id}}" method="POST">
+    <form action="{{route('venda.update', [$venda->id])}}" method="POST">
         @csrf
         @method('PUT')
         <label for="">valortotal</label>

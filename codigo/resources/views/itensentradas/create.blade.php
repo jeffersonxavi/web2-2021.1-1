@@ -1,24 +1,22 @@
-<h1>Pagina de Cadastro de Contato</h1>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADICIONAR CONTATO</title>
-</head>
-<body>
-    <form action="{{route('itensentradastore')}}" method="POST">
-        @csrf
-        <label for="precocompra">precocompra</label>
-        <input type="text" name="precocompra" id="precocompra">
-        <p><label for="valortotal">Valortotal</label>
-        <input type="text" name="quantidade" id="quantidade">
-        {{id_itensentrada}}
-        {{id_produto}}
-        <p><input type="hidden" name="id_itensentrada" value="{{$id_itensentrada}}">
-        <p><input type="hidden" name="id_produto" value="{{$id_produto}}">    
-        <p><input type="submit" value="cadastrar">    
-    </form>
-</body>
-</html>
+@extends('layouts.main')
+@section('titulo','cadastro de itensentrada')
+@section('conteudo')
+        <form action="{{route('itensentrada.store')}}" method="POST">
+            @csrf
+            <div class="row">
+                <div class="col">
+                    <label for="">Preço da compra</label>
+                    <input type="text" class="form-control" placeholder="Preço" name="precocompra" id="precocompra">
+                </div>
+                <div class="col">
+                    <label for="">Quantidade</label>
+                    <input type="text" class="form-control" placeholder="Quantidade" name="quantidade" id="quantidade">
+                </div>
+            </div>
+            {{id_itensentrada}}
+            {{id_produto}}
+            <p><input type="hidden" name="id_itensentrada" value="{{$id_itensentrada}}">
+            <p><input type="hidden" name="id_produto" value="{{$id_produto}}">    
+            <p><input type="submit" value="cadastrar">   
+        </form>
+@endsection('conteudo')

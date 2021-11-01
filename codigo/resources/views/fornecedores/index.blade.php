@@ -1,14 +1,35 @@
-<h1>Listar Fornecedores</h1>
-@foreach ($fornecedores as $fornecedor)
-<ul>
-    <li>Nome do fornecedor: {{$fornecedor->nome}};</li>
-    <li>Endereço do fornecedor: {{$fornecedor->endereco}};</li>
-    <li>E-mail do fornecedor: {{$fornecedor->email}};</li>
-    <a href="edit/{{$fornecedor->id}}">Editar</a>
-    <form action="../fornecedores/{{$fornecedor->id}}" method="POST">
-        @csrf
-        @method('DELETE')
-        <input type="submit" value="deletar">
-    </form>
-</ul>
-@endforeach
+@extends('layouts.main')
+@section('titulo','Lista de fornecedores')
+@section('conteudo')
+<h4>Listar Fornecedores</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($fornecedores as $fornecedor)
+        <tr>
+            <th scope="row">{{$fornecedor->id}}</td>
+            <td>{{$fornecedor->nome}}</td>
+            <td>{{$fornecedor->endereco}}</td>
+            <td>{{$fornecedor->email}}</td>
+            <td>
+            <a href="edit/{{$fornecedor->id}}">Editar</a>
+            </td>
+            <td>
+            <form action="../fornecedores/{{$fornecedor->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="deletar">
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+@endsection('conteudo')

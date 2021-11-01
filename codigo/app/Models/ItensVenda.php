@@ -11,4 +11,13 @@ class ItensVenda extends Model
     protected $table = "itensvendas";
     protected $guarded = [];
     protected $fillable = ['precovenda', 'quantidade'];
+
+    
+    function venda(){
+        return $this->hasOne(Venda::class, 'id_venda', 'id');
+    }
+
+    function produto(){
+        return $this->hasMany(Produto::class, 'id_produto', 'id');
+    }
 }

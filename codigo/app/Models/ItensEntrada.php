@@ -11,4 +11,13 @@ class ItensEntrada extends Model
     protected $table = "itensentradas";
     protected $guarded = [];
     protected $fillable = ['precocompra', 'quantidade'];
+   
+    
+    function entrada(){
+        return $this->hasOne(Entrada::class, 'id_entrada', 'id');
+    }
+
+    function produto(){
+        return $this->hasMany(Produto::class, 'id_produto', 'id');
+    }
 }

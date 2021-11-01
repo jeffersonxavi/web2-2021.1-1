@@ -11,4 +11,11 @@ class Produto extends Model
     protected $table = "produtos";
     protected $guarded = [];
     protected $fillable = ['descricao', 'quantidade', 'valor'];
+
+    function itensentrada(){
+        return $this->belongsTo(ItensEntrada::class, 'id_itensentrada', 'id');
+    }
+    function itensvenda(){
+        return $this->belongsTo(ItensVenda::class, 'id_itensvenda', 'id');
+    }
 }

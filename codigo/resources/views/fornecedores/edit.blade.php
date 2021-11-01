@@ -1,23 +1,23 @@
-<h1>Pagina de edição de Fornecedor</h1>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDITAR</title>
-</head>
-<body>
-    <form action="../update/{{$fornecedor->id}}" method="POST">
+@extends('layouts.main')
+@section('titulo','Edição de fornecedores')
+@section('conteudo')
+    <form action="{{route('fornecedor.update', [$fornecedor->id])}}" method="POST">
         @csrf
         @method('PUT')
-        <label for="">Nome Fornecedor</label>
-        <input type="text" name="nome" id="nome" value="{{$fornecedor->nome}}">
-        <p><label for="">Endereço do Fornecedor</label>
-        <input type="text" name="endereco" id="endereco" value="{{$fornecedor->endereco}}">
-        <p><label for="">E-mail do Fornecedor</label>
-        <input type="text" name="email" id="email" value="{{$fornecedor->email}}">
+        <div class="row">
+                <div class="col">
+                    <label for="nome">Nome do Fornecedor</label>
+                    <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome" value="{{$fornecedor->nome}}">
+                </div>
+                <div class="col">
+                    <label for="email">E-mail do Fornecedor</label>
+                    <input type="text" class="form-control" placeholder="E-mail" name="email" id="email" value="{{$fornecedor->email}}">
+                </div>
+                <div class="col">
+                    <label for="endereco">Endereço do Fornecedor</label>
+                    <input type="text" class="form-control" placeholder="Endereço" name="endereco" id="endereco" value="{{$fornecedor->endereco}}">
+                </div>
+            </div>
         <p><input type="submit" value="salvar">    
     </form>
-</body>
-</html>
+@endsection('conteudo')

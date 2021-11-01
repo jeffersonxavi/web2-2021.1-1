@@ -1,22 +1,23 @@
-<h1>Pagina de Cadastro de Produto</h1>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADICIONAR PRODUTO</title>
-</head>
+@extends('layouts.main')
+@section('titulo','cadastro de produtos')
+@section('conteudo')
 <body>
-    <form action="{{route('produtosstore')}}" method="POST">
+    <form action="{{route('produto.store')}}" method="POST">
         @csrf
-        <label for="">Descrição</label>
-        <input type="text" name="descricao" id="descricao">
-        <label for="">Quantidade</label>
-        <input type="text" name="quantidade" id="quantidade">
-        <label for="">Valor</label>
-        <input type="text" name="valor" id="valor">
+            <div class="row">
+                <div class="col">
+                    <label for="">Descrição</label>
+                    <input type="text" class="form-control" placeholder="Descrição" name="descricao" id="descricao">
+                </div>
+                <div class="col">
+                    <label for="">Quantidade</label>
+                    <input type="text" class="form-control" placeholder="Quantidade" name="quantidade" id="quantidade">
+                </div>
+                <div class="col">
+                    <label for="">Valor</label>
+                    <input type="text" class="form-control" placeholder="Valor" name="valor" id="valor">
+                </div>
+            </div>
         <p><input type="submit" value="cadastrar">    
     </form>
-</body>
-</html>
+@endsection('conteudo')

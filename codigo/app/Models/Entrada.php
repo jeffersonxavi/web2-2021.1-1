@@ -12,4 +12,10 @@ class Entrada extends Model
     protected $guarded = [];
     protected $fillable = ['valortotal', 'data'];
     
+    function fornecedor(){
+        return $this->belongsTo(Fornecedor::class, 'id_fornecedor', 'id');
+    }
+    function itensentrada(){
+        return $this->belongsTo(ItensEntrada::class, 'id_entrada', 'id');
+    }
 }

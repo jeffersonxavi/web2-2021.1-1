@@ -1,24 +1,24 @@
-<h1>Pagina de Cadastro de Fornecedor</h1>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADICIONAR FORNECEDOR</title>
-</head>
-<body>
-    <form action="store" method="POST">
-        @csrf
-        <label for="">Nome Fornecedor</label>
-        <input type="text" name="nome" id="nome">
-        <p><label for="">Endereço do Fornecedor</label>
-        <input type="text" name="endereco" id="endereco">
-        <p><label for="">E-mail do Fornecedor</label>
-        <input type="text" name="email" id="email">
-        {{id_fornecedor}}
-        <p><input type="hidden" name="id_fornecedor" value="{{$id_fornecedor}}">    
-        <p><input type="submit" value="cadastrar">
-    </form>
-</body>
-</html>
+@extends('layouts.main')
+@section('titulo','cadastro de fornecedores')
+@section('conteudo')
+    <div id="form">
+        <form action="{{route('fornecedor.store')}}" method="POST">
+            @csrf
+            <div class="row">
+                <div class="col">
+                    <label for="">Nome do Fornecedor</label>
+                    <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome">
+                </div>
+                <div class="col">
+                    <label for="">E-mail do Fornecedor</label>
+                    <input type="text" class="form-control" placeholder="E-mail" name="email" id="email">
+                </div>
+                <div class="col">
+                    <label for="">Endereço do Fornecedor</label>
+                    <input type="text" class="form-control" placeholder="Endereço" name="endereco" id="endereco">
+                </div>
+            </div>
+            <p><p><input  class="btn btn-secondary active" type="submit" value="Cadastrar"></p></p>
+        </form>
+    </div>
+@endsection('conteudo')

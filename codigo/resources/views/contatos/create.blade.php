@@ -8,16 +8,14 @@
     <title>ADICIONAR CONTATO</title>
 </head>
 <body>
-    <form action="{{route('contatostore')}}" method="POST">
+    <form action="{{route('contato.store')}}" method="POST">
         @csrf
-        <label for="telefone">Telefone</label>
+        <label for="">Telefone</label>
         <input type="text" name="telefone" id="telefone">
-        <p><label for="instagram">Instagram</label>
+        <p><label for="">Instagram</label>
         <input type="text" name="instagram" id="instagram">
-        <p><label for="telegram">Telegram</label>
-        <input type="text" name="telegram" id="telegram">
-        {{fornecedor_id}}
-        <p><input type="hidden" name="fornecedor_id" value="{{$fornecedor_id}}">    
+        <p><label for="">Telegram</label>
+        <input type="text" name="telegram" id="telegram">  
         <p><input type="submit" value="cadastrar">    
     </form>
 </body>

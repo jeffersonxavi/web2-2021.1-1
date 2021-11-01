@@ -1,22 +1,22 @@
-<h1>Pagina de Cadastro de Clientes</h1>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="store" method="POST">
+@extends('layouts.main')
+@section('titulo','cadastro de clientes')
+@section('conteudo')
+    <form action="{{route('cliente.store')}}" method="POST">
         @csrf
-        <label for="">Nome Cliente</label>
-        <input type="text" name="nome" id="nome">
-        <label for="">Endereço do Cliente</label>
-        <input type="text" name="endereco" id="endereco">
-        <label for="">Debito do Cliente</label>
-        <input type="text" name="debito" id="debito">
-        <input type="submit" value="cadastrar">    
+        <div class="row">
+                <div class="col">
+                    <label for="">Nome do Fornecedor</label>
+                    <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome">
+                </div>
+                <div class="col">
+                    <label for="">Endereço do Fornecedor</label>
+                    <input type="text" class="form-control" placeholder="Endereço" name="endereco" id="endereco">
+                </div>
+                <div class="col">
+                    <label for="">Debito do Fornecedor</label>
+                    <input type="text" class="form-control" placeholder="Debito" name="debito" id="debito">
+                </div>
+            </div>
+            <p><p><input  class="btn btn-secondary active" type="submit" value="Cadastrar"></p></p>
     </form>
-</body>
-</html>
+@endsection('conteudo')

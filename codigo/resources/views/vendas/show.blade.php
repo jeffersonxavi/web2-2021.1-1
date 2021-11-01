@@ -1,7 +1,7 @@
-<h1>Página de consulta de vendas</h1>
-@foreach ($venda as $vendas)
+<h1>Página de consulta de venda</h1>
+@foreach ($vendas as $venda)
 <ul>
-    <li>Nome do forncedor: {{$venda->data}}</li>
-    <li>Endereco do forncedor: {{$venda->valortotal}}</li>
+    <li>data: {{$venda->data}}</li>
+    <li>venda: {{$venda->valortotal}}</li>
 </ul>
 @endforeach

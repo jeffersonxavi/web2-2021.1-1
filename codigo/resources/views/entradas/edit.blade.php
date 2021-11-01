@@ -8,7 +8,7 @@
     <title>EDITAR</title>
 </head>
 <body>
-    <form action="../update/{{$entrada->id}}" method="POST">
+    <form action="{{route('entrada.update', [$entrada->id])}}" method="POST">
         @csrf
         @method('PUT')
         <label for="">Data entrada</label>

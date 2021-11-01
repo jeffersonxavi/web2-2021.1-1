@@ -8,16 +8,12 @@
     <title>ADICIONAR PRODUTO</title>
 </head>
 <body>
-    <form action="{{route('itensvendastore')}}" method="POST">
+    <form action="{{route('itensvenda.store')}}" method="POST">
         @csrf
         <label for="preco">preco</label>
         <input type="text" name="preco" id="preco">
         <p><label for="quantidade">quantidade</label>
         <input type="text" name="quantidade" id="quantidade">
-        {{id_venda}}
-        {{id_produto}}
-        <p><input type="hidden" name="id_venda" value="{{$id_venda}}">    
-        <p><input type="hidden" name="id_produto" value="{{$id_produto}}">    
         <p><input type="submit" value="cadastrar">    
     </form>
 </body>

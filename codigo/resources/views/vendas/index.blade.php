@@ -3,8 +3,8 @@
 <ul>
     <li>Nome do venda: {{$venda->data}};</li>
     <li>Endereço do venda: {{$venda->valortotal}};</li>
-    <a href="edit/{{$venda->id}}">Editar</a>
-    <form action="../vendas/{{$venda->id}}" method="POST">
+    <a href="{{route('venda.edit', [$venda->id])}}">Editar</a>
+    <form action="{{route('venda.destroy', [$venda->id])}}" method="POST">
         @csrf
         @method('DELETE')
         <input type="submit" value="deletar">
