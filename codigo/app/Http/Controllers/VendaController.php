@@ -13,7 +13,7 @@ class VendaController extends Controller
         return view('vendas.index', ['vendas'=>$vendas]); 
     }
 
-    public function create($id){
+    public function create(){
         return view('vendas.create'); 
     }
 

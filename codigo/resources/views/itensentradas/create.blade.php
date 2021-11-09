@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('titulo','cadastro de itensentrada')
 @section('conteudo')
+<h4>Cadastro Itens Entrada</h4>
         <form action="{{route('itensentrada.store')}}" method="POST">
             @csrf
             <div class="row">

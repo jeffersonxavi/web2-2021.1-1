@@ -1,7 +1,7 @@
 @extends('layouts.main')
-@section('titulo','Edição de fornecedores')
+@section('titulo','Listar fornecedor')
 @section('conteudo')
-<h4>Consultar Fornecedores</h4>
+<h4>Visualizar Fornecedor</h4>
 <table class="table">
     <thead>
         <tr>

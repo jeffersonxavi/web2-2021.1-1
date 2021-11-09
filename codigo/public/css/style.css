@@ -1,0 +1,80 @@
+body{
+    margin:0;
+    padding: 0;
+    background: #dbdbdb;
+    font: 85% arial, sans-serif;
+    text-align: center;
+}
+
+#container{
+    background: white;
+    width: auto;
+    height: 500px;
+    text-align: center;
+    border: 2px solid black;
+}
+
+#header{
+    text-align: center;
+    background: #0099f1bd;
+    height: 60px;
+}
+
+#nav{
+    background: black;
+    
+}
+
+#conteudo{
+    float: center;
+    width: auto;
+    background: white;
+    margin: 15px 15px 15px 15px;
+}
+
+#form{
+    float: center;
+    width: auto;
+    background: white;
+    margin: 15px 300px 15px 300px;
+
+}
+
+#footer{
+    background: #0099f1bd;
+    padding: 2px;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+
+#nav ul {
+    border-left:  1px solid white;
+}
+
+
+h1{
+    font-size: 48px;
+    color: rgb(0, 0, 0);
+    padding: 2px 0 10px 0;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+  } 
+
+h4{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    padding: 10px 0 10px 0;
+    font-family: sans-serif;
+    text-align: center;
+  } 
+
+div col{
+    position: fixed;
+    text-align: center;
+    border: 20px solid rgb(0, 0, 0);
+}

@@ -26,7 +26,7 @@
             <form action="../fornecedores/{{$fornecedor->id}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" value="deletar">
+                    <input type="submit" value="deletar" >
             </td>
         </tr>
         @endforeach

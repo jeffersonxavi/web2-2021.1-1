@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('titulo','Lista de clientes')
 @section('conteudo')
-<h4>Listar clientes</h4>
+<h4>Listar Clientes</h4>
 <table class="table">
     <thead>
         <tr>

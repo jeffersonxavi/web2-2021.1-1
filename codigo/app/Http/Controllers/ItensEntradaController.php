@@ -10,11 +10,11 @@ class ItensEntradaController extends Controller
     public function index(){
         $itensentradas = Itensentrada::all();
 
-        return view('itensentrada.index', ['itensentrada'=>$itensentradas]); 
+        return view('itensentradas.index', ['itensentradas'=>$itensentradas]); 
     }
 
-    public function create($id){
-        return view('itensentrada.create',['entrada_id'=>$id]); 
+    public function create(){
+        return view('itensentradas.create'); 
     }
 
     public function store(Request $request){
@@ -24,6 +24,6 @@ class ItensEntradaController extends Controller
         $itensentrada->id_itensentrada= $request->id_itensentrada;
         $itensentrada->id_produto= $request->id_produto;
         $itensentrada->save();
-        return redirect('/itensentrada/index');
+        return redirect('/itensentradas/index');
     }
 }

@@ -10,11 +10,11 @@ class ItensVendaController extends Controller
     public function index(){
         $itensvendas = Itensvenda::all();
 
-        return view('itensvenda.index', ['itensvenda'=>$itensvendas]); 
+        return view('itensvendas.index', ['itensvendas'=>$itensvendas]); 
     }
 
-    public function create($id){
-        return view('itensvenda.create',['venda_id'=>$id]); 
+    public function create(){
+        return view('itensvendas.create'); 
     }
 
     public function store(Request $request){
@@ -24,6 +24,6 @@ class ItensVendaController extends Controller
         $itensvenda->id_itensvenda= $request->id_itensvenda;
         $itensvenda->id_produto= $request->id_produto;
         $itensvenda->save();
-        return redirect('/itensvenda/index');
+        return redirect('/itensvendas/index');
     }
 }

@@ -1,4 +1,7 @@
-<h1>Página de consulta de Contato</h1>
+@extends('layouts.main')
+@section('titulo','Lista de contato')
+@section('conteudo')
+<h4>Visualizar Contato</h4>
 @foreach ($contatos as $contato)
 <ul>
     <li>telefone: {{$entrada->telefone}}</li>
@@ -6,3 +9,4 @@
     <li>telegram: {{$entrada->telegram}}</li>
 </ul>
 @endforeach
+@endsection

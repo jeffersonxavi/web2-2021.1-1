@@ -8,15 +8,8 @@ use COM;
 
 class FornecedorController extends Controller
 {
-    /*
-    public function show(){
-        $fornecedores = Fornecedor::all();
-        echo $fornecedores; 
-    }
-    */
     public function index(){
         $fornecedores = Fornecedor::all();
-
         return view('fornecedores.index', ['fornecedores'=>$fornecedores]); 
     }
 
@@ -76,7 +69,7 @@ class FornecedorController extends Controller
             }
             echo"<br>";
         }
-    }   
+    }
 
 }
 

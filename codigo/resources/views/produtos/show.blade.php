@@ -1,4 +1,4 @@
-<h1>Página de consulta de Produto</h1>
+<h4>Visualizar Produto</h4>
 @foreach ($produtos as $produto)
 <ul>
     <li>descricao: {{$produto->descricao}}</li>

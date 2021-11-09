@@ -1,4 +1,7 @@
-<h1>Listar itensentradas</h1>
+@extends('layouts.main')
+@section('titulo','Lista de cliente')
+@section('conteudo')
+<h4>Listar Itens Entradas</h4>
 @foreach ($itensentradas as $itensentrada)
 <ul>
     <li>Nome do itensentrada: {{$itensentrada->precocompra}};</li>
@@ -11,3 +14,4 @@
     </form>
 </ul>
 @endforeach
+@endsection('conteudo')

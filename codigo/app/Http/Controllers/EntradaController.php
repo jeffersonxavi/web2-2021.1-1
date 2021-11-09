@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Entrada;
+use COM;
 
 class EntradaController extends Controller
 {
     public function index(){
         $entradas = Entrada::all();
-
         return view('entradas.index', ['entradas'=>$entradas]); 
     }
 
-    public function create($id){
+    public function create(){
         return view('entradas.create'); 
     }
 

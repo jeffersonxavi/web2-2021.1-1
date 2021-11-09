@@ -1,4 +1,7 @@
-<h1>Listar venda</h1>
+@extends('layouts.main')
+@section('titulo','Lista de vendas')
+@section('conteudo')
+<h4>Listar Vendas</h4>
 @foreach ($vendas as $venda)
 <ul>
     <li>Nome do venda: {{$venda->data}};</li>
@@ -11,3 +14,4 @@
     </form>
 </ul>
 @endforeach
+@endsection('conteudo')

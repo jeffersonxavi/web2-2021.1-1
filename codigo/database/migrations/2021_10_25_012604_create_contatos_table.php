@@ -19,6 +19,11 @@ class CreateContatosTable extends Migration
             $table->string('telefone', 15);
             $table->string('instagram', 30);
             $table->string('telegram', 45);
+
+            $table->unsignedBigInteger('id_cliente');
+            $table->foreign('id_cliente')->references('id')->on('clientes')->onDelete('cascade');
+            $table->unsignedBigInteger('id_fornecedor');
+            $table->foreign('id_fornecedor')->references('id')->on('fornecedores')->onDelete('cascade');
         });
     }
 

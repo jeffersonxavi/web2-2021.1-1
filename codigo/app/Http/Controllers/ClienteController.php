@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+
 class ClienteController extends Controller
 {
 
@@ -23,11 +24,34 @@ class ClienteController extends Controller
     }
 
     public function store(Request $request){
+
+        $request->validate([
+            'nome' => 'required',
+            'endereco' => 'required',
+            'debito' => 'required'
+
+        ]);
+
         $cliente= new Cliente();
         $cliente->nome= $request->nome;
         $cliente->endereco= $request->endereco;
         $cliente->debito= $request->debito;
         $cliente->save();
-        return redirect('index');
+        return redirect('/clientes/index');
+    }
+
+    public function edit($id){
+        $cliente = Cliente::findorFail($id);
+        return view('clientes.edit', ['cliente'=>$cliente]);
+    }
+
+    public function update(Request $request){
+        Cliente::find($request->id)->update($request->except('_method'));
+        return redirect('clientes/index')->with('msg', 'cliente atualizado');
+    }
+    
+    public function destroy($id){
+        Cliente::findorFail($id)->delete();
+        return redirect('clientes/index')->with('msg', 'cliente excluído com sucesso');
     }
 }

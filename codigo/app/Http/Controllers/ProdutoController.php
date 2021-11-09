@@ -13,7 +13,7 @@ class ProdutoController extends Controller
         return view('produtos.index', ['produtos'=>$produtos]); 
     }
 
-    public function create($id){
+    public function create(){
         return view('produtos.create'); 
     }
 
@@ -39,4 +39,5 @@ class ProdutoController extends Controller
     public function destroy($id){
         Produto::findorFail($id)->delete();
         return redirect('produtos/index')->with('msg', 'produto excluído com sucesso');
-    }}
+    }
+}

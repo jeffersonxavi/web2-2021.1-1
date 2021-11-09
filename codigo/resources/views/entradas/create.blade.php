@@ -1,6 +1,7 @@
 @extends('layouts.main')
-@section('titulo','Cadastro de entradas')
+@section('titulo','Cadastro de Entrada')
 @section('conteudo')
+<h4>Cadastro de Entrada</h4>
 <div id="form">
     <form action="{{route('entrada.store')}}" method="POST">
         @csrf
@@ -14,7 +15,7 @@
                 <input type="text" class="form-control" placeholder="Valor Total" name="valortotal" id="valortotal">
             </div>
         </div>
-        <p><input type="submit" value="cadastrar">
+        <p><p><input  class="btn btn-secondary active" type="submit" value="Cadastrar"></p></p>
     </form>
 </div>
 @endsection('conteudo')

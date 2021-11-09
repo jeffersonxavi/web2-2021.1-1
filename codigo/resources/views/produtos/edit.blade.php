@@ -1,8 +1,8 @@
-<h1>Pagina de edição de produto</h1>
-<!DOCTYPE html>
 @extends('layouts.main')
-@section('titulo','Edição de produtos')
+@section('titulo','Editar Produtos')
 @section('conteudo')
+<h4>Editar Produto</h4>
+<div id="form">
     <form action="{{route('produto.update', [$produto->id])}}" method="POST">
         @csrf
         @method('PUT')
@@ -11,6 +11,7 @@
                     <label for="descricao">Descrição</label>
                     <input type="text" class="form-control" placeholder="Descrição" name="descricao" id="descricao">
                 </div>
+                <p></p>
                 <div class="col">
                     <label for="quantidade">Quantidade</label>
                     <input type="text" class="form-control" placeholder="Quantidade" name="quantidade" id="quantidade">
@@ -20,6 +21,7 @@
                     <input type="text" class="form-control" placeholder="Valor" name="valor" id="valor">
                 </div>
             </div>
-        <p><input type="submit" value="salvar">    
+            <p><p><input  class="btn btn-secondary active" type="submit" value="Salvar"></p></p>
     </form>
+</div>
 @endsection('conteudo')

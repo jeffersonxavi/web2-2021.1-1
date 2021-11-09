@@ -1,4 +1,7 @@
-<h1>Listar contatos</h1>
+@extends('layouts.main')
+@section('titulo','Cadastro de clientes')
+@section('conteudo')
+<h4>Listar Contatos</h4>
 @foreach ($contatos as $contato)
 <ul>
     <li>Telefone: {{$contato->telefone}};</li>

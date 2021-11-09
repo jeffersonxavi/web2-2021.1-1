@@ -21,8 +21,8 @@ class CreateItensentradasTable extends Migration
             $table->double('precocompra');
             $table->integer('quantidade');
 
-            $table->foreign('id_entrada')->references('id')->on('entrada')->onDelete("cascade");
-            $table->foreign('id_produto')->references('id')->on('produto')->onDelete("cascade");
+            $table->foreign('id_entrada')->references('id')->on('entradas')->onDelete("cascade");
+            $table->foreign('id_produto')->references('id')->on('produtos')->onDelete("cascade");
         });
     }
 

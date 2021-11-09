@@ -1,4 +1,7 @@
-<h1>Página de consulta de entradas</h1>
+@extends('layouts.main')
+@section('titulo','Lista de entrada')
+@section('conteudo')
+<h4>Visualizar entrada</h4>
 @foreach ($entradas as $entrada)
 <ul>
     <li>Nome do forncedor: {{$entrada->data}}</li>

@@ -66,7 +66,7 @@ Route::post('/produtos/store', [ProdutoController::class, 'store'])->name('produ
 Route::get('/produtos/show/{id}', [ProdutoController::class, 'show'])->name('produto.show');
 Route::get('/produtos/edit/{id}', [ProdutoController::class, 'edit'])->name('produto.edit');
 Route::put('/produtos/update/{id}', [ProdutoController::class, 'update'])->name('produto.update');
-Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy'])->name('produto.delete');
+Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy'])->name('produto.destroy');
 
 //Entrada
 Route::get('/entradas/index', [EntradaController::class, 'index'])->name('entrada.index');
@@ -75,7 +75,7 @@ Route::post('/entradas/store', [EntradaController::class, 'store'])->name('entra
 Route::get('/entradas/show/{id}', [EntradaController::class, 'show'])->name('entrada.show');
 Route::get('/entradas/edit/{id}', [EntradaController::class, 'edit'])->name('entrada.edit');
 Route::put('/entradas/update/{id}', [EntradaController::class, 'update'])->name('entrada.update');
-Route::delete('/entradas/{id}', [EntradaController::class, 'destroy'])->name('entrada.delete');
+Route::delete('/entradas/{id}', [EntradaController::class, 'destroy'])->name('entrada.destroy');
 
 //ItensEntrada
 Route::get('/itensentradas/index', [ItensEntradaController::class, 'index'])->name('itensentrada.index');
@@ -84,16 +84,16 @@ Route::post('/itensentradas/store', [ItensEntradaController::class, 'store'])->n
 Route::get('/itensentradas/show/{id}', [ItensEntradaController::class, 'show'])->name('itensentrada.show');
 Route::get('/itensentradas/edit/{id}', [ItensEntradaController::class, 'edit'])->name('itensentrada.edit');
 Route::put('/itensentradas/update/{id}', [ItensEntradaController::class, 'update'])->name('itensentrada.update');
-Route::delete('/itensentradas/{id}', [ItensEntradaController::class, 'destroy'])->name('itensentrada.delete');
+Route::delete('/itensentradas/{id}', [ItensEntradaController::class, 'destroy'])->name('itensentrada.destroy');
 
 //Venda
 Route::get('/vendas/index', [VendaController::class, 'index'])->name('venda.edit');
 Route::get('/vendas/create', [VendaController::class, 'create'])->name('venda.edit');
-Route::post('/vendas/store', [VendaController::class, 'store'])->name('venda.edit');
+Route::post('/vendas/store', [VendaController::class, 'store'])->name('venda.store');
 Route::get('/vendas/show/{id}', [VendaController::class, 'show'])->name('venda.show');
 Route::get('/vendas/edit/{id}', [VendaController::class, 'edit'])->name('venda.edit');
 Route::put('/vendas/update/{id}', [VendaController::class, 'update'])->name('venda.update');
-Route::delete('/vendas/{id}', [VendaController::class, 'destroy'])->name('venda.delete');
+Route::delete('/vendas/{id}', [VendaController::class, 'destroy'])->name('venda.destroy');
 
 //ItensVenda
 Route::get('/itensvendas/index', [ItensVendaController::class, 'index'])->name('itensvenda.index');
@@ -102,5 +102,5 @@ Route::post('/itensvendas/store', [ItensVendaController::class, 'store'])->name(
 Route::get('/itensvendas/show/{id}', [ItensVendaController::class, 'show'])->name('itensvenda.show');
 Route::get('/itensvendas/edit/{id}', [ItensVendaController::class, 'edit'])->name('itensvenda.edit');
 Route::put('/itensvendas/update/{id}', [ItensVendaController::class, 'update'])->name('itensvenda.update');
-Route::delete('/itensvendas/{id}', [ItensVendaController::class, 'destroy'])->name('itensvenda.delete');
+Route::delete('/itensvendas/{id}', [ItensVendaController::class, 'destroy'])->name('itensvenda.destroy');
 

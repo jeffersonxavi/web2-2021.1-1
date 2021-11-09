@@ -21,8 +21,8 @@ class CreateItensvendasTable extends Migration
             $table->double('preco');
             $table->integer('quantidade');
 
-            $table->foreign('id_venda')->references('id')->on('venda')->onDelete('cascade');
-            $table->foreign('id_produto')->references('id')->on('produto')->onDelete('cascade');
+            $table->foreign('id_venda')->references('id')->on('vendas')->onDelete("cascade");
+            $table->foreign('id_produto')->references('id')->on('produtos')->onDelete("cascade");
         });
     }
 

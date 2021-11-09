@@ -1,4 +1,7 @@
-<h1>Página de consulta de Cliente</h1>
+@extends('layouts.main')
+@section('titulo','Lista de cliente')
+@section('conteudo')
+<h4>Visualizar Cliente</h4>
 @foreach ($clientes as $cliente)
 <ul>
     <li>Nome do cliente: {{$cliente->nome}}</li>
