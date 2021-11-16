@@ -18,10 +18,14 @@ class ItensVendaController extends Controller
     }
 
     public function store(Request $request){
+        $request->validate([
+            'preco' => 'required',
+            'quantidade' => 'required',
+        ]);
         $itensvenda= new Itensvenda();
-        $itensvenda->valortotal= $request->preco;
-        $itensvenda->data= $request->quantidade;
-        $itensvenda->id_itensvenda= $request->id_itensvenda;
+        $itensvenda->preco= $request->preco;
+        $itensvenda->quantidade= $request->quantidade;
+        $itensvenda->id_venda= $request->id_venda;
         $itensvenda->id_produto= $request->id_produto;
         $itensvenda->save();
         return redirect('/itensvendas/index');

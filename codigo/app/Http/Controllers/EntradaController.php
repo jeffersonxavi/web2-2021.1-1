@@ -18,6 +18,12 @@ class EntradaController extends Controller
     }
 
     public function store(Request $request){
+        $request->validate([
+            'valortotal' => 'required',
+            'data' => 'required',
+
+        ]);
+
         $entrada= new Entrada();
         $entrada->valortotal= $request->valortotal;
         $entrada->data= $request->data;

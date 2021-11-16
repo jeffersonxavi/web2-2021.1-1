@@ -18,11 +18,13 @@ class VendaController extends Controller
     }
 
     public function store(Request $request){
-        $venda= new Venda();
+        $request->validate([
+            'valortotal' => 'required',
+            'quantidade' => 'required',
+            'valor' => 'required',
+        ]);    $venda= new Venda();
         $venda->valortotal= $request->valortotal;
         $venda->data= $request->data;
-        $venda->id_venda= $request->id_venda;
-        $venda->id_produto= $request->id_produto;
         $venda->save();
         return redirect('/vendas/index');
     }

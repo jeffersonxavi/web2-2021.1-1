@@ -18,6 +18,14 @@ class FornecedorController extends Controller
     }
 
     public function store(Request $request){
+        $request->validate([
+            'nome' => 'required',
+            'endereco' => 'required',
+            'email' => 'email',
+
+        ]);
+
+        
         $fornecedor= new Fornecedor();
         $fornecedor->nome= $request->nome;
         $fornecedor->endereco= $request->endereco;

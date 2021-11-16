@@ -18,6 +18,13 @@ class ContatoController extends Controller
     }
 
     public function store(Request $request){
+        $request->validate([
+            'telefone' => 'required',
+            'instagram' => 'required',
+            'telegram' => 'required'
+
+        ]);
+
         $contato= new Contato();
         $contato->telefone= $request->telefone;
         $contato->instagram= $request->instagram;

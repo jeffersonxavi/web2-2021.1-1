@@ -18,10 +18,14 @@ class ItensEntradaController extends Controller
     }
 
     public function store(Request $request){
+        $request->validate([
+            'precocompra' => 'required',
+            'quantidade' => 'required',
+        ]);
         $itensentrada= new Itensentrada();
         $itensentrada->precocompra= $request->precocompra;
-        $itensentrada->data= $request->quantidade;
-        $itensentrada->id_itensentrada= $request->id_itensentrada;
+        $itensentrada->quantidade= $request->quantidade;
+        $itensentrada->id_entrada= $request->id_entrada;
         $itensentrada->id_produto= $request->id_produto;
         $itensentrada->save();
         return redirect('/itensentradas/index');

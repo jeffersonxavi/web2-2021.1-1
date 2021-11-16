@@ -3,6 +3,17 @@
 @section('conteudo')
 <div id="form">
     <form action="{{route('fornecedor.store')}}" method="POST">
+        @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>
+                    {{$error}}
+                </li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         @csrf
         <div class="row">
             <p>
@@ -20,8 +31,9 @@
                 <input type="text" class="form-control" placeholder="Endereço" name="endereco" id="endereco">
             </div>
         </div>
-        
-        <p><p><input class="btn btn-secondary active" type="submit" value="Cadastrar"></p>
+
+        <p>
+        <p><input class="btn btn-secondary active" type="submit" value="Cadastrar"></p>
     </form>
 </div>
 @endsection('conteudo')
