@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProdutoRequest;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 
@@ -19,7 +20,7 @@ class ProdutoController extends Controller
         return view('produtos.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreProdutoRequest $request)
     {
         $request->validate([
             'descricao' => 'required',
@@ -40,7 +41,7 @@ class ProdutoController extends Controller
         return view('produtos.edit', ['produto' => $produto]);
     }
 
-    public function update(Request $request)
+    public function update(StoreProdutoRequest $request)
     {
         Produto::find($request->id)->update($request->except('_method'));
         return redirect('produtos/index')->with('msg', 'produto atualizada');

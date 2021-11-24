@@ -43,7 +43,7 @@
             @yield('conteudo')
         </div>
         <div id="footer">
-            copyright @ WEB
+            copyrightjefferson@WEB
         </div>
     </div>
     <!-- JavaScript Bundle with Popper -->

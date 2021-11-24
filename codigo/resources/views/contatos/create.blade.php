@@ -17,12 +17,27 @@
         @endif
         @csrf
         <label for="">Telefone</label>
-        <input type="text" name="telefone" id="telefone">
+        <input type="text" class="form-control @error('telefone') is-invalid @enderror" name="telefone" id="telefone">
+        @error('telefone')
+        <div class="invalid-feedback">
+            {{$message}}
+        </div>
+        @enderror
         <p><label for="">Instagram</label>
-            <input type="text" name="instagram" id="instagram">
+            <input type="text" class="form-control @error('instagram') is-invalid @enderror" name="instagram" id="instagram">
+            @error('instagram')
+        <div class="invalid-feedback">
+            {{$message}}
+        </div>
+        @enderror
         <p><label for="">Telegram</label>
-            <input type="text" name="telegram" id="telegram">
-        <p><input type="submit" value="cadastrar">
+            <input type="text" class="form-control @error('telegram') is-invalid @enderror" name="telegram" id="telegram">
+            @error('telegram')
+        <div class="invalid-feedback">
+            {{$message}}
+        </div>
+        @enderror
+        <p><input class="btn btn-secondary active" type="submit" value="Cadastrar"></p>
     </form>
 </div>
 @endsection

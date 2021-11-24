@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreVendaRequest;
 use App\Models\Venda;
 use Illuminate\Http\Request;
 
@@ -17,11 +18,8 @@ class VendaController extends Controller
         return view('vendas.create'); 
     }
 
-    public function store(Request $request){
+    public function store(StoreVendaRequest $request){
         $request->validate([
-            'valortotal' => 'required',
-            'quantidade' => 'required',
-            'valor' => 'required',
         ]);    $venda= new Venda();
         $venda->valortotal= $request->valortotal;
         $venda->data= $request->data;
@@ -34,7 +32,7 @@ class VendaController extends Controller
         return view('vendas.edit', ['venda'=>$venda]);
     }
 
-    public function update(Request $request){
+    public function update(StoreVendaRequest $request){
         Venda::find($request->id)->update($request->except('_method'));
         return redirect('vendas/index')->with('msg', 'venda atualizada');
     }

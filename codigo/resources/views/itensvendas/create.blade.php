@@ -4,37 +4,46 @@
 <h4>Cadastro Itens Venda</h4>
 <div id="form">
     <form action="{{route('itensvenda.store')}}" method="POST">
-        @if($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                <li>
-                    {{$error}}
-                </li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
         @csrf
         <div class="row">
             <div class="col">
                 <label for="">id_venda</label>
-                <input type="text" class="form-control" placeholder="id_venda" name="id_venda" id="id_venda">
+                <input type="text" class="form-control @error('id_venda') is-invalid @enderror" placeholder="id_venda" name="id_venda" id="id_venda">
+                @error('id_venda')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
             <div class="col">
                 <label for="">id_produto</label>
-                <input type="text" class="form-control" placeholder="id_produto" name="id_produto" id="id_produto">
+                <input type="text" class="form-control @error('id_produto') is-invalid @enderror" placeholder="id_produto" name="id_produto" id="id_produto">
+                @error('id_produto')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
             <div class="col">
                 <label for="">Preço da compra</label>
-                <input type="text" class="form-control" placeholder="Preço" name="preco" id="preco">
+                <input type="text" class="form-control @error('preco') is-invalid @enderror" placeholder="Preço" name="preco" id="preco">
+                @error('preco')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
             <div class="col">
                 <label for="">Quantidade</label>
-                <input type="text" class="form-control" placeholder="Quantidade" name="quantidade" id="quantidade">
+                <input type="text" class="form-control @error('quantidade') is-invalid @enderror" placeholder="Quantidade" name="quantidade" id="quantidade">
+                @error('quantidade')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
         </div>
-        <p><input type="submit" value="cadastrar">
+        <p><input class="btn btn-secondary active" type="submit" value="Cadastrar"></p>
     </form>
 </div>
 @endsection('conteudo')

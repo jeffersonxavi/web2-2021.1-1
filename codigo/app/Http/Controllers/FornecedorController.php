@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreFornecedorRequest;
 use Illuminate\Http\Request;
 use App\Models\Fornecedor;
 use COM;
@@ -17,15 +18,7 @@ class FornecedorController extends Controller
         return view('fornecedores.create'); 
     }
 
-    public function store(Request $request){
-        $request->validate([
-            'nome' => 'required',
-            'endereco' => 'required',
-            'email' => 'email',
-
-        ]);
-
-        
+    public function store(StoreFornecedorRequest $request){
         $fornecedor= new Fornecedor();
         $fornecedor->nome= $request->nome;
         $fornecedor->endereco= $request->endereco;
@@ -42,15 +35,14 @@ class FornecedorController extends Controller
             $fornecedor = Fornecedor::all();
         }
         return view('fornecedores.show', ['fornecedores'=>$fornecedor]);
-    }
-    
+    }    
     
     public function edit($id){
         $fornecedor = Fornecedor::findorFail($id);
         return view('fornecedores.edit', ['fornecedor'=>$fornecedor]);
     }
 
-    public function update(Request $request){
+    public function update(StoreFornecedorRequest $request){
         Fornecedor::find($request->id)->update($request->except('_method'));
         return redirect('fornecedores/index')->with('msg', 'Fornecedor atualizado');
     }

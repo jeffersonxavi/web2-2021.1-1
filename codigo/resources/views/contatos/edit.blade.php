@@ -7,12 +7,27 @@
         @csrf
         @method('PUT')
         <label for="telefone">telefone</label>
-        <input type="text" name="telefone" id="telefone" value="{{$contato->telefone}}">
+        <input type="text" class="form-control @error('telefone') is-invalid @enderror" name="telefone" id="telefone" value="{{$contato->telefone}}">
+        @error('telefone')
+        <div class="invalid-feedback">
+            {{$message}}
+        </div>
+        @enderror
         <p><label for="instagram">instagram</label>
-        <input type="text" name="instagram" id="instagram" value="{{$contato->instagram}}">
+            <input type="text" class="form-control @error('instagram') is-invalid @enderror" name="instagram" id="instagram" value="{{$contato->instagram}}">
+            @error('instagram')
+        <div class="invalid-feedback">
+            {{$message}}
+        </div>
+        @enderror
         <p><label for="telegram">telegram</label>
-        <input type="text" name="telegram" id="telegram" value="{{$contato->telegram}}">
-        <p><input type="submit" value="salvar">    
+            <input type="text" class="form-control @error('telegram') is-invalid @enderror" name="telegram" id="telegram" value="{{$contato->telegram}}">
+            @error('telegram')
+        <div class="invalid-feedback">
+            {{$message}}
+        </div>
+        @enderror
+        <p><input class="btn btn-secondary active" type="submit" value="Salvar"></p>
     </form>
 </div>
 @endsection('conteudo')

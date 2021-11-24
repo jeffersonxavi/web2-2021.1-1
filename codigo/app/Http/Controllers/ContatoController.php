@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreContatoRequest;
 use Illuminate\Http\Request;
 use App\Models\Contato;
 
@@ -17,12 +18,12 @@ class ContatoController extends Controller
         return view('contatos.create'); 
     }
 
-    public function store(Request $request){
+    public function store(StoreContatoRequest $request){
+
         $request->validate([
             'telefone' => 'required',
             'instagram' => 'required',
             'telegram' => 'required'
-
         ]);
 
         $contato= new Contato();
@@ -50,7 +51,7 @@ class ContatoController extends Controller
         return view('contatos.edit', ['contato'=>$contato]);
     }
 
-    public function update(Request $request){
+    public function update(StoreContatoRequest $request){
         Contato::find($request->id)->update($request->except('_method'));
         return redirect('contatos/index')->with('msg', 'contato atualizado');
     }

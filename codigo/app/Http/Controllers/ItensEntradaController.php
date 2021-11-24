@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreItensEntradaRequest;
 use Illuminate\Http\Request;
 use App\Models\ItensEntrada;
 
@@ -17,7 +18,7 @@ class ItensEntradaController extends Controller
         return view('itensentradas.create'); 
     }
 
-    public function store(Request $request){
+    public function store(StoreItensEntradaRequest $request){
         $request->validate([
             'precocompra' => 'required',
             'quantidade' => 'required',

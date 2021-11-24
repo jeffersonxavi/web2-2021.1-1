@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreEntradaRequest;
 use Illuminate\Http\Request;
 use App\Models\Entrada;
 use COM;
@@ -17,11 +18,10 @@ class EntradaController extends Controller
         return view('entradas.create'); 
     }
 
-    public function store(Request $request){
+    public function store(StoreEntradaRequest $request){
         $request->validate([
             'valortotal' => 'required',
             'data' => 'required',
-
         ]);
 
         $entrada= new Entrada();
@@ -37,7 +37,7 @@ class EntradaController extends Controller
         return view('entradas.edit', ['entrada'=>$entrada]);
     }
 
-    public function update(Request $request){
+    public function update(StoreEntradaRequest $request){
         Entrada::find($request->id)->update($request->except('_method'));
         return redirect('entradas/index')->with('msg', 'Entrada atualizada');
     }

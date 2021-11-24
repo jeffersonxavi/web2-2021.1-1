@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreItensVendaRequest;
+use App\Http\Requests\StoreVendaRequest;
 use Illuminate\Http\Request;
 use App\Models\ItensVenda;
 
@@ -17,7 +19,7 @@ class ItensVendaController extends Controller
         return view('itensvendas.create'); 
     }
 
-    public function store(Request $request){
+    public function store(StoreItensVendaRequest $request){
         $request->validate([
             'preco' => 'required',
             'quantidade' => 'required',

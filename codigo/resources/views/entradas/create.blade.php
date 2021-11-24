@@ -4,30 +4,34 @@
 <h4>Cadastro de Entrada</h4>
 <div id="form">
     <form action="{{route('entrada.store')}}" method="POST">
-        @if($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                <li>
-                    {{$error}}
-                </li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
         @csrf
         <div class="row">
             <div class="col">
                 <label for="">ID Fornecedor</label>
-                <input type="text" class="form-control" placeholder="ID Fornecedor" name="id_fornecedor" id="id_fornecedor">
+                <input type="text" class="form-control @error('nome') is-invalid @enderror" placeholder="ID Fornecedor" name="id_fornecedor" id="id_fornecedor">
+                @error('id_fornecedor')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
             <div class="col">
                 <label for="">Data entrada</label>
-                <input type="date" class="form-control" placeholder="Data" name="data" id="data">
+                <input type="date" class="form-control @error('data') is-invalid @enderror" placeholder="Data" name="data" id="data">
+                @error('data')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
             <div class="col">
                 <label for="">Valor Total</label>
-                <input type="text" class="form-control" placeholder="Valor Total" name="valortotal" id="valortotal">
+                <input type="text" class="form-control @error('valortotal') is-invalid @enderror" placeholder="Valor Total" name="valortotal" id="valortotal">
+                @error('valortotal')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
         </div>
         <p>

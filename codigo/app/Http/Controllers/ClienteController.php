@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreClienteRequest;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 
@@ -23,14 +24,7 @@ class ClienteController extends Controller
         return view('clientes.create'); 
     }
 
-    public function store(Request $request){
-
-        $request->validate([
-            'nome' => 'required',
-            'endereco' => 'required',
-            'debito' => 'required'
-
-        ]);
+    public function store(StoreClienteRequest $request){
 
         $cliente= new Cliente();
         $cliente->nome= $request->nome;
@@ -45,7 +39,7 @@ class ClienteController extends Controller
         return view('clientes.edit', ['cliente'=>$cliente]);
     }
 
-    public function update(Request $request){
+    public function update(StoreClienteRequest $request){
         Cliente::find($request->id)->update($request->except('_method'));
         return redirect('clientes/index')->with('msg', 'cliente atualizado');
     }
