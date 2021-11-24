@@ -10,5 +10,3 @@
 
 
 - 4 Utilizando os componentos  do bootstrap (tabelas ou grids) monte as paginas que apresentem diversos dados, como por exemplo a lista de produtos.
-https://getbootstrap.com/docs/4.0/content/tables/
-https://getbootstrap.com/docs/4.0/layout/grid/
