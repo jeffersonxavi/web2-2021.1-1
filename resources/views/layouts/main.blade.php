@@ -41,10 +41,6 @@
         </div>
         <div id="conteudo">
             @yield('conteudo')
-            <p>
-                <span style="background: #1abc9c; border-radius:7px; padding:7px">
-                    SEJA BEM VINDO A PAGINA INICIAL</span>.
-            </p>
         </div>
         <div id="footer">
             copyrightjefferson@WEB
