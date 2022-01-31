@@ -41,7 +41,7 @@ Route::prefix('clientes')->group(function () {
 });
 //Fornecedor
 Route::prefix('fornecedores')->group(function () {
-    Route::get('/index', [FornecedorController::class, 'index'])->name('fornecedor.create');
+    Route::get('/index', [FornecedorController::class, 'index'])->name('fornecedor.index');
     Route::get('/create', [FornecedorController::class, 'create'])->name('fornecedor.create');
     Route::post('/store', [FornecedorController::class, 'store'])->name('fornecedor.store');
     Route::get('/show/{id}', [FornecedorController::class, 'show'])->name('fornecedor.show');
@@ -98,7 +98,7 @@ Route::prefix('itensentradas')->group(function () {
 
 //Venda
 Route::prefix('vendas')->group(function () {
-    Route::get('/index', [VendaController::class, 'index'])->name('venda.edit');
+    Route::get('/index', [VendaController::class, 'index'])->name('venda.index');
     Route::get('/create', [VendaController::class, 'create'])->name('venda.edit');
     Route::post('/store', [VendaController::class, 'store'])->name('venda.store');
     Route::get('/show/{id}', [VendaController::class, 'show'])->name('venda.show');
