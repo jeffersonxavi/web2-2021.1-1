@@ -22,7 +22,7 @@
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="http://localhost/projetoweb/public/produtos/index">Produtos</a>
+                        <a class="nav-link" href="..>Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://localhost/projetoweb/public/entradas/index">Entradas</a>
