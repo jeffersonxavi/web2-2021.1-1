@@ -41,11 +41,11 @@ class ClienteController extends Controller
 
     public function update(StoreClienteRequest $request){
         Cliente::find($request->id)->update($request->except('_method'));
-        return redirect('clientes/index')->with('msg', 'cliente atualizado');
+        return redirect('clientes/index')->with('msg', 'Cliente atualizado');
     }
     
     public function destroy($id){
         Cliente::findorFail($id)->delete();
-        return redirect('clientes/index')->with('msg', 'cliente excluído com sucesso');
+        return redirect('clientes/index')->with('msg', 'Cliente excluído com sucesso');
     }
 }

@@ -46,7 +46,7 @@ Route::prefix('fornecedores')->group(function () {
     Route::put('/update/{id}', [FornecedorController::class, 'update'])->name('fornecedor.update');
     Route::delete('/{id}', [FornecedorController::class, 'destroy'])->name('fornecedor.delete');
 });
-//Contato (mesma coisa feito em endereço só que fiz pra contato)
+//Contato
 Route::prefix('contatos')->group(function () {
     Route::get('/index', [ContatoController::class, 'index'])->name('contato.index');
     Route::get('/create', [ContatoController::class, 'create'])->name('contato.create');
