@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('titulo','Lista de vendas')
 @section('conteudo')
-<h4>Listar Vendas</h4>
+<h2>Listar Vendas</h2>
 <table class="table">
     <thead>
         <tr>

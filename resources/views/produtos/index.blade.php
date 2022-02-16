@@ -4,7 +4,7 @@
 <div class="row">
     <a href="{{route('produto.create')}}" class="btn btn-outline-info btn-rounded waves-effect">+</a>
 </div>
-<h4>Listar Produtos</h4>
+<h2>Listar Produtos</h2>
 <table class="table">
     <thead>
         <tr>

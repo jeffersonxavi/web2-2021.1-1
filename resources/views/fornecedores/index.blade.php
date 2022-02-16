@@ -4,7 +4,7 @@
 <div class="row">
     <a href="{{route('fornecedor.create')}}" class="btn btn-outline-info btn-rounded waves-effect">+</a>
 </div>
-<h4>Listar Fornecedores</h4>
+<h2>Listar Fornecedores</h2>
 <table class="table">
     <thead>
         <tr>
