@@ -49,7 +49,7 @@ Route::prefix('fornecedores')->group(function () {
     Route::get('/show/{id}', [FornecedorController::class, 'show'])->name('fornecedor.show');
     Route::get('/edit/{id}', [FornecedorController::class, 'edit'])->name('fornecedor.edit');
     Route::put('/update/{id}', [FornecedorController::class, 'update'])->name('fornecedor.update');
-    Route::delete('/{id}', [FornecedorController::class, 'destroy'])->name('fornecedor.delete');
+    Route::delete('/{id}', [FornecedorController::class, 'destroy'])->name('fornecedor.destroy');
 });
 
 //Produto

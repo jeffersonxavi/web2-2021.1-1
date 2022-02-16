@@ -10,7 +10,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
-            <th scope="col">E-mail</th>
+            <th scope="col">CNPJ</th>
             <th scope="col">Endereço</th>
             <th scope="col">Ação</th>
         </tr>
@@ -20,16 +20,17 @@
         <tr>
             <th scope="row">{{$fornecedor->id}}</td>
             <td>{{$fornecedor->nome}}</td>
+            <td>{{$fornecedor->cnpj}}</td>
             <td>{{$fornecedor->endereco}}</td>
-            <td>{{$fornecedor->email}}</td>
             <td>
-            <a href="edit/{{$fornecedor->id}}">Editar</a>
+                <a href="{{route('fornecedor.edit', [$fornecedor->id])}} "><input class="btn btn-danger btn-sm" value="EDITAR"></a>
             </td>
             <td>
-            <form action="../fornecedores/{{$fornecedor->id}}" method="POST">
-                    @csrf
+                <form action="{{route('fornecedor.destroy', [$fornecedor->id])}}" method="POST">
                     @method('DELETE')
-                    <input type="submit" value="deletar" >
+                    @csrf
+                    <input type="submit" class="btn btn-secondary btn-sm" value="DELETAR">
+                </form>
             </td>
             </form>
         </tr>

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('titulo','Cadastro')
 @section('conteudo')
-<h2>Cadastro Carro</h2>
+<h2>Cadastro Modelo de Carro</h2>
 <div id="form">
     <form action="{{route('carro.store')}}" method="POST">
         @csrf

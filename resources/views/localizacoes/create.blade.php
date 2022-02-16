@@ -1,7 +1,7 @@
 @extends('layouts.main')
-@section('titulo','Cadastro|Cliente Físico')
+@section('titulo','Cadastro')
 @section('conteudo')
-<h2>Cadastro de Cliente</h2>
+<h2>Cadastro de Departamento</h2>
 <div id="form">
     <form action="{{route('localizacao.store')}}" method="POST">
         @csrf

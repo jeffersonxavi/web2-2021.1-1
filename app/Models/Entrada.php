@@ -16,7 +16,7 @@ class Entrada extends Model
     
     function fornecedor()
     {
-        return $this->belongsTo(Fornecedor::class);
+        return $this->belongsTo(Fornecedor::class,'fornecedor_id');
     }
 
     function itensentrada()

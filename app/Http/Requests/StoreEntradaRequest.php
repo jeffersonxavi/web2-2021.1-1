@@ -24,17 +24,19 @@ class StoreEntradaRequest extends FormRequest
     public function rules()
     {
         return [
-                'idfornecedor' => 'required',
-                'valortotal' => 'required',
-                'datacompra' => 'required'   
+                'fornecedor_id' => 'required',
+                'valortotalnota' => 'required',
+                'datacompra' => 'required',
+                'status' => 'required'   
         ];
     }
 
     public function messages(){
         return [
-            'idfornecedor.required' => 'Preencha o campo ID Fornecedor*',
-            'valortotal.required' => 'Preencha o campo Valor Total*',
-            'datacompra.required' => 'Preencha o campo da Data da Compra*'
+            'fornecedor_id.required' => 'Preencha o campo *',
+            'valortotal.required' => 'Preencha o campo *',
+            'datacompra.required' => 'Preencha o campo *',
+            'status.required' => 'Preencha o campo *'
 
         ];
     }
