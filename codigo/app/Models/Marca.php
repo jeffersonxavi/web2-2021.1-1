@@ -1,33 +1,18 @@
 <?php
 
-class Marca
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Marca extends Model
 {
-    private $idmarca;
-    private $marca;
+    use HasFactory;
+    protected $table = "marcas";
+    protected $fillable = ['marca'];
 
-    public function __construct($idmarca, $marca)
-    {
-        $this->idmarca = $idmarca;
-        $this->marca = $marca;
-    }
 
-    public function getIdmarca()
-    {
-        return $this->idmarca;
-    }
-
-    public function setIdmarca($idmarca)
-    {
-        $this->idmarca = $idmarca;
-    }
-
-    public function getMarca()
-    {
-        return $this->marca;
-    }
-
-    public function setMarca($marca)
-    {
-        $this->marca = $marca;
+    function produto(){
+        return $this->hasMany(Produto::class);
     }
 }

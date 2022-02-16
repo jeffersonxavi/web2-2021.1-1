@@ -3,16 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Marca;
 use App\Http\Requests\StoreMarcaRequest;
+use App\Models\Marca;
 
 class MarcaController extends Controller
 {
-    //
-    public function show(){
-        $marcas = Marca::all();
-        echo $marcas;
-    }
 
     public function index(){
         $marcas = Marca::all();

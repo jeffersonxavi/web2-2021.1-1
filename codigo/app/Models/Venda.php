@@ -11,16 +11,17 @@ class Venda extends Model
 
     protected $table = "vendas";
 
-    protected $fillable = ['cliente_id','valortotal','datavenda','formapagamento_id','status'];
+    protected $fillable = ['cliente_id','formapagamento_id','valortotal','datavenda','status'];
 
-    protected $guarded = [];
     
     public function cliente(){
-        return $this->belongsTo(Cliente::class, 'venda_id','id');
+        return $this->belongsTo(Cliente::class);
     }
 
+
+
     function itensvenda(){
-        return $this->hasMany(ItensVenda::class, 'venda_id', 'id');
+        return $this->hasMany(ItensVenda::class);
     }
 
 }

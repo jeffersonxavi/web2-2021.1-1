@@ -6,73 +6,7 @@ body {
     font: 100% arial, sans-serif;
     text-align: center;
 }
-nav{
-	position: relative;
-	margin: 20px auto 0;
-	width: 590px;
-	height: 50px;
-	background: #f00000;
-	border-radius: 8px;
-	font-size: 0;
-	box-shadow: 0 2px 3px 0 rgba(255, 255, 255, 0.1);
-}
-nav a{
-	font-size: 15px;
-	text-transform: uppercase;
-	color: white;
-	text-decoration: none;
-	line-height: 50px;
-	position: relative;
-	z-index: 1;
-	display: inline-block;
-	text-align: center;
-}
-nav .animation{
-	position: absolute;
-	height: 15%;
-	/* height: 5px; */
-	bottom: 0;
-	/* bottom: 0; */
-	z-index: 0;
-	background: #000000;
-	border-radius: 8px;
-	transition: all .5s ease 0s;
-}
-nav a:nth-child(1){
-	width: 100px;
-}
-nav .start-home, a:nth-child(1):hover~.animation{
-	width: 100px;
-	left: 0;
-}
-nav a:nth-child(2){
-	width: 110px;
-}
-nav a:nth-child(2):hover~.animation{
-	width: 110px;
-	left: 100px;
-}
-nav a:nth-child(3){
-	width: 100px;
-}
-nav a:nth-child(3):hover~.animation{
-	width: 100px;
-	left: 210px;
-}
-nav a:nth-child(4){
-	width: 160px;
-}
-nav a:nth-child(4):hover~.animation{
-	width: 160px;
-	left: 310px;
-}
-nav a:nth-child(5){
-	width: 120px;
-}
-nav a:nth-child(5):hover~.animation{
-	width: 120px;
-	left: 470px;
-}
+
 #container{
     background: white;
     width: auto;
@@ -102,15 +36,18 @@ nav a:nth-child(5):hover~.animation{
 
 }
 
-
-#nav ul {
-    border-left:  1px solid white;
-}
-
-
 h1{
     font-size: 48px;
-    color: rgb(255, 254, 254);
+    color: rgb(255, 0, 0);
+    padding: 2px 0 10px 0;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+  } 
+  h2{
+    font-size: 30px;
+    color: rgb(0, 0, 0);
     padding: 2px 0 10px 0;
     font-family: sans-serif;
     font-weight: bold;
@@ -128,20 +65,20 @@ h4{
 
 .caixadepesquisa{
     position: absolute;
-    top: 16%;
+    top: 25%;
     left: 90%;
     transform: translate(-50%, -50%);
-    height: 40px;
-    border-radius: 40px;
+    height: 60px;
+    border-radius: 30px;
     background-color: white;
-    padding: 10px;
+    padding: 5px;
 }
 .botaodepesquisa{
     color: white;
     float: right;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    border-radius: 80%;
     background-color: black;
     display: flex;
     justify-content: center;
@@ -154,7 +91,7 @@ h4{
     outline: none;
     float: left;
     padding: 0%;
-    color: black;
+    color: rgb(253, 253, 253);
     font-size: 15px;
     transition: 0.6s;
     line-height: 35px;
@@ -163,3 +100,65 @@ h4{
 .caixadepesquisa:hover > .textodepesquisa{
     width: 70px;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+  }
+  
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+  
+  li ul {
+    display: none;
+  }
+  
+  li {
+    margin: 5px;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px
+    
+  }
+  
+  .active,
+  li:hover {
+    background-color: #ff0000
+  }
+  
+  /* Dropdown level 1 */
+  
+  li:hover ul {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    width: 200px;
+  }
+  
+  li ul a {
+    text-align: left;
+    padding: 0 15px;
+    width: 100%;
+  }

@@ -9,10 +9,10 @@ class Fabricacao extends Model
 {
     use HasFactory;
     protected $table = "fabricacao";
-    protected $fillable = ['anofabricacao'];
+    protected $fillable = ['ano'];
 
 
     function produto(){
-        return $this->hasMany(Produto::class, 'anofabricacao_id', 'id');
+        return $this->hasMany(Produto::class);
     }
 }

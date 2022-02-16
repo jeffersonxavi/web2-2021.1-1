@@ -9,10 +9,10 @@ class FormaPagamento extends Model
 {
     use HasFactory;
     protected $table = "formasdepagamento";
-    protected $fillable = ['condicao',
-    'forma'];
+    protected $fillable = ['condicao','forma'];
 
     public function cliente(){
         return $this->belongsTo(Cliente::class, 'cliente_id','id');
     }
+
 }

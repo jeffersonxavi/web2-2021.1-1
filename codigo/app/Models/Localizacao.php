@@ -9,10 +9,10 @@ class Localizacao extends Model
 {
     use HasFactory;
     protected $table = "localizacoes";
-    protected $fillable = ['localizacao'];
+    protected $fillable = ['departamento'];
 
 
     function produto(){
-        return $this->hasMany(Produto::class, 'localizacao_id', 'id');
+        return $this->hasMany(Produto::class);
     }
 }

@@ -1,33 +1,18 @@
 <?php
 
-class Valvulas
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Valvula extends Model
 {
-    private $idvalvulas;
-    private $quantidade;
+    use HasFactory;
+    protected $table = "valvulas";
+    protected $fillable = ['quantidade'];
 
-    public function __construct($idvalvulas, $quantidade)
-    {
-        $this->idvalvulas = $idvalvulas;
-        $this->quantidade = $quantidade;
-    }
 
-    public function getIdvalvulas()
-    {
-        return $this->idvalvulas;
-    }
-
-    public function setIdvalvulas($idvalvulas)
-    {
-        $this->idvalvulas = $idvalvulas;
-    }
-
-    public function getQuantidade()
-    {
-        return $this->quantidade;
-    }
-
-    public function setQuantidade($quantidade)
-    {
-        $this->quantidade = $quantidade;
+    function produto(){
+        return $this->hasMany(Produto::class);
     }
 }

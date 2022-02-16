@@ -13,6 +13,6 @@ class Carro extends Model
 
 
     function produto(){
-        return $this->hasMany(Produto::class, 'carro_id', 'id');
+        return $this->hasMany(Produto::class);
     }
 }

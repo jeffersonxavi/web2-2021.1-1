@@ -11,12 +11,7 @@ class Fornecedor extends Model
     protected $table = "fornecedores";
     protected $fillable = ['nome','cnpj','endereco','telefone'];
 
-    function endereco(){
-        return $this->hasMany(Endereco::class, 'fornecedor_id', 'id');
-
-    }
-
     public function entrada(){
-        return $this->belongsTo(Entrada::class, 'fornecedor_id','id');
+        return $this->hasMany(Entrada::class);
     }
 }

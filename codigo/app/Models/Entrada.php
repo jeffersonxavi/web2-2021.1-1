@@ -13,11 +13,14 @@ class Entrada extends Model
     protected $fillable = ['fornecedor_id','valortotalnota','datacompra','status'];
 
     protected $guarded = [];
-    function fornecedor(){
-        return $this->hasMany(Fornecedor::class, 'entrada_id', 'id');
-    }
-    function itensentrada(){
-        return $this->hasMany(ItensEntrada::class, 'entrada_id', 'id');
+    
+    function fornecedor()
+    {
+        return $this->belongsTo(Fornecedor::class);
     }
 
+    function itensentrada()
+    {
+        return $this->hasMany(ItensEntrada::class);
+    }
 }
