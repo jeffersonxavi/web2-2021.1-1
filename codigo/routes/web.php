@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\ContatoController;
@@ -9,7 +8,7 @@ use App\Http\Controllers\EntradaController;
 use App\Http\Controllers\ItensEntradaController;
 use App\Http\Controllers\VendaController;
 use App\Http\Controllers\ItensVendaController;
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,10 +20,14 @@ use App\Http\Controllers\ItensVendaController;
 |
 */
 
+
 Route::get('/', function () {
     return view('layouts.main');
 });
 
+Route::get('/clientes', [ClienteController::class, 'show']);
+
+Route::get('/fornecedores/show', [FornecedorController::class, 'show']);
 
 //Cliente
 Route::prefix('clientes')->group(function () {
@@ -38,7 +41,7 @@ Route::prefix('clientes')->group(function () {
 });
 //Fornecedor
 Route::prefix('fornecedores')->group(function () {
-    Route::get('/index', [FornecedorController::class, 'index'])->name('fornecedor.create');
+    Route::get('/index', [FornecedorController::class, 'index'])->name('fornecedor.index');
     Route::get('/create', [FornecedorController::class, 'create'])->name('fornecedor.create');
     Route::post('/store', [FornecedorController::class, 'store'])->name('fornecedor.store');
     Route::get('/show/{id}', [FornecedorController::class, 'show'])->name('fornecedor.show');
@@ -46,7 +49,7 @@ Route::prefix('fornecedores')->group(function () {
     Route::put('/update/{id}', [FornecedorController::class, 'update'])->name('fornecedor.update');
     Route::delete('/{id}', [FornecedorController::class, 'destroy'])->name('fornecedor.delete');
 });
-//Contato
+//Contato (mesma coisa feito em endereço só que fiz pra contato)
 Route::prefix('contatos')->group(function () {
     Route::get('/index', [ContatoController::class, 'index'])->name('contato.index');
     Route::get('/create', [ContatoController::class, 'create'])->name('contato.create');
@@ -95,7 +98,7 @@ Route::prefix('itensentradas')->group(function () {
 
 //Venda
 Route::prefix('vendas')->group(function () {
-    Route::get('/index', [VendaController::class, 'index'])->name('venda.edit');
+    Route::get('/index', [VendaController::class, 'index'])->name('venda.index');
     Route::get('/create', [VendaController::class, 'create'])->name('venda.edit');
     Route::post('/store', [VendaController::class, 'store'])->name('venda.store');
     Route::get('/show/{id}', [VendaController::class, 'show'])->name('venda.show');
