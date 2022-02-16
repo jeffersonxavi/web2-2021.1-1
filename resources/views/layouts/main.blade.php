@@ -41,12 +41,7 @@
    
             </ul>
         </nav>
-        <div class="caixadepesquisa">
-            <input class="textodepesquisa" type="text" placeholder="Pesquisar">
-            <a class="botaodepesquisa" href="">
-                <i class="fas fa-search"></i>
-            </a>
-        </div>
+
         </nav>
         <script src="script.js"></script>
         <div id="conteudo">
