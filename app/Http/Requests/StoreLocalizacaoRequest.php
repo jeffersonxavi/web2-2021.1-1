@@ -24,7 +24,7 @@ class StoreLocalizacaoRequest extends FormRequest
     public function rules()
     {
         return [
-                'localizacao' => 'required',
+                'departamento' => 'required',
 
                    
         ];
@@ -32,7 +32,7 @@ class StoreLocalizacaoRequest extends FormRequest
 
     public function messages(){
         return [
-            'localizacao' => 'Preencha o campo*',
+            'departamento' => 'Preencha o campo*',
         ];
     }
 }

@@ -23,7 +23,7 @@ class MarcaController extends Controller
         $marca->marca = $request->marca;
         $marca->save();
 
-        return redirect('marcas.index');
+        return redirect('marcas/index');
     }
 
     
@@ -34,12 +34,12 @@ class MarcaController extends Controller
 
     public function update(StoreMarcaRequest $request){
         Marca::find($request->id)->update($request->except('_method'));
-        return redirect('marcas.index')->with('msg', 'marca atualizada');
+        return redirect('marcas/index')->with('msg', 'marca atualizada');
     }
     
     public function destroy($id){
         Marca::findorFail($id)->delete();
-        return redirect('marcas.index')->with('msg', 'marca excluída com sucesso');
+        return redirect('marcas/index')->with('msg', 'marca excluída com sucesso');
     }
 
 }

@@ -36,7 +36,7 @@ class ItensEntradaController extends Controller
         
         $itensentrada->save();
 
-        return redirect('itensentradas.index');
+        return redirect('itensentradas/index');
     }
 
     

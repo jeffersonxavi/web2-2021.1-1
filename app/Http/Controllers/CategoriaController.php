@@ -28,7 +28,7 @@ class CategoriaController extends Controller
         $categoria->categoria = $request->categoria;
         $categoria->save();
 
-        return redirect('categorias.index');
+        return redirect('categorias/index');
     }
 
     
@@ -39,12 +39,12 @@ class CategoriaController extends Controller
 
     public function update(StoreCategoriaRequest $request){
         Categoria::find($request->id)->update($request->except('_method'));
-        return redirect('categorias.index')->with('msg', 'categoria atualizada');
+        return redirect('categorias/index')->with('msg', 'categoria atualizada');
     }
     
     public function destroy($id){
         Categoria::findorFail($id)->delete();
-        return redirect('categorias.index')->with('msg', 'categoria excluída com sucesso');
+        return redirect('categorias/index')->with('msg', 'categoria excluída com sucesso');
     }
 
 }

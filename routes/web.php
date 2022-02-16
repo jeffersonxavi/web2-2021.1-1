@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\CarroController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\FornecedorController;
-use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\EntradaController;
 use App\Http\Controllers\FabricacaoController;
@@ -50,19 +50,6 @@ Route::prefix('fornecedores')->group(function () {
     Route::get('/edit/{id}', [FornecedorController::class, 'edit'])->name('fornecedor.edit');
     Route::put('/update/{id}', [FornecedorController::class, 'update'])->name('fornecedor.update');
     Route::delete('/{id}', [FornecedorController::class, 'destroy'])->name('fornecedor.delete');
-});
-//Contato (mesma coisa feito em endereço só que fiz pra contato)
-Route::prefix('contatos')->group(function () {
-    Route::get('/index', [ContatoController::class, 'index'])->name('contato.index');
-    Route::get('/create', [ContatoController::class, 'create'])->name('contato.create');
-    Route::post('/store', [ContatoController::class, 'store'])->name('contato.store');
-    Route::get('/show/{id}', [ContatoController::class, 'show'])->name('contato.show');
-    Route::get('/edit/{id}', [ContatoController::class, 'edit'])->name('contato.edit');
-    Route::put('/update/{id}', [ContatoController::class, 'update'])->name('contato.update');
-    Route::delete('//{id}', [ContatoController::class, 'destroy'])->name('contato.destroy');
-    Route::get('/fornecedores/showcontato', [FornecedorController::class, 'show'])->name('showcontato');
-    Route::get('/create/{id}', [ContatoController::class, 'create'])->name('contatocreate');
-    Route::post('/store', [ContatoController::class, 'store'])->name('contatostore');
 });
 
 //Produto
@@ -143,7 +130,7 @@ Route::prefix('categorias')->group(function () {
 });
 
 //Fabricação
-Route::prefix('fabricacao')->group(function () {
+Route::prefix('fabricacoes')->group(function () {
     Route::get('/index', [FabricacaoController::class, 'index'])->name('fabricacao.index');
     Route::get('/create', [FabricacaoController::class, 'create'])->name('fabricacao.create');
     Route::post('/store', [FabricacaoController::class, 'store'])->name('fabricacao.store');
@@ -165,7 +152,7 @@ Route::prefix('localizacoes')->group(function () {
 });
 
 //Motor
-Route::prefix('motor')->group(function () {
+Route::prefix('motors')->group(function () {
     Route::get('/index', [MotorController::class, 'index'])->name('motor.index');
     Route::get('/create', [MotorController::class, 'create'])->name('motor.create');
     Route::post('/store', [MotorController::class, 'store'])->name('motor.store');
@@ -184,4 +171,15 @@ Route::prefix('valvulas')->group(function () {
     Route::get('/edit/{id}', [ValvulaController::class, 'edit'])->name('valvula.edit');
     Route::put('/update/{id}', [ValvulaController::class, 'update'])->name('valvula.update');
     Route::delete('/itensvendas/{id}', [ValvulaController::class, 'destroy'])->name('valvula.destroy');
+});
+
+//Carro
+Route::prefix('carros')->group(function () {
+    Route::get('/index', [CarroController::class, 'index'])->name('carro.index');
+    Route::get('/create', [CarroController::class, 'create'])->name('carro.create');
+    Route::post('/store', [CarroController::class, 'store'])->name('carro.store');
+    Route::get('/show/{id}', [CarroController::class, 'show'])->name('carro.show');
+    Route::get('/edit/{id}', [CarroController::class, 'edit'])->name('carro.edit');
+    Route::put('/update/{id}', [CarroController::class, 'update'])->name('carro.update');
+    Route::delete('/itensvendas/{id}', [CarroController::class, 'destroy'])->name('carro.destroy');
 });

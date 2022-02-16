@@ -34,7 +34,7 @@ class ItensVendaController extends Controller
         
         $itensvenda->save();
 
-        return redirect('itensvendas.index');
+        return redirect('itensvendas/index');
     }
 
     

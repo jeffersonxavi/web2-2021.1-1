@@ -27,7 +27,7 @@ class FornecedorController extends Controller
         $fornecedor->endereco= $request->endereco;
         $fornecedor->telefone= $request->telefone;
         $fornecedor->save();
-        return redirect('fornecedores.index');
+        return redirect('fornecedores/index');
     }
     public function edit($id){
         $fornecedor = Fornecedor::findorFail($id);
@@ -36,12 +36,12 @@ class FornecedorController extends Controller
 
     public function update(StoreFornecedorRequest $request){
         Fornecedor::find($request->id)->update($request->except('_method'));
-        return redirect('fornecedores.index')->with('msg', 'Fornecedor atualizado');
+        return redirect('fornecedores/index')->with('msg', 'Fornecedor atualizado');
     }
     
     public function destroy($id){
         Fornecedor::findorFail($id)->delete();
-        return redirect('fornecedores.index')->with('msg', 'Fornecedor excluído com sucesso');
+        return redirect('fornecedores/index')->with('msg', 'Fornecedor excluído com sucesso');
     }
 
 }

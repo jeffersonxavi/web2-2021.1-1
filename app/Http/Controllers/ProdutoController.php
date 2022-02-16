@@ -3,8 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Produto;
 use App\Http\Requests\StoreProdutoRequest;
+use App\Models\Carro;
+use App\Models\Categoria;
+use App\Models\Fabricacao;
+use App\Models\Localizacao;
+use App\Models\Marca;
+use App\Models\Motor;
+use App\Models\Produto;
+use App\Models\Valvula;
 
 class ProdutoController extends Controller
 {
@@ -19,7 +26,15 @@ class ProdutoController extends Controller
         return view('produtos.index', ['produtos'=>$produtos]);
     }
     public function create(){
-        return view('produtos.create'); 
+        return view('produtos.create', [
+            'motors' => Motor::all(),
+            'carros' => Carro::all(),
+            'valvulas' => Valvula::all(),
+            'fabricacoes' => Fabricacao::all(),
+            'localizacoes' => Localizacao::all(),
+            'categorias' => Categoria::all(),
+            'marcas' => Marca::all(),
+        ]); 
     }
 
     public function store(StoreProdutoRequest $request)
@@ -46,7 +61,7 @@ class ProdutoController extends Controller
         $produto->referencia = $request->referencia;
         $produto->save();
         
-        return redirect('produtos.index');
+        return redirect('produtos/index');
     }
 
     

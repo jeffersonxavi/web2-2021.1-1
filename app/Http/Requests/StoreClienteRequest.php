@@ -27,8 +27,9 @@ class StoreClienteRequest extends FormRequest
         return [
             
                 'nome' => 'required',
+                'telefone' => 'required',
                 'cpf' => 'required',
-                'endereco' => 'required',
+                'cnpj' => 'required',
                 'debito' => 'required'    
         ];
     }
@@ -36,12 +37,12 @@ class StoreClienteRequest extends FormRequest
     public function messages(){
         return [
             'nome.required' => 'Preencha o campo Nome*',
-            'sexo.required' => 'Preencha o campo Sexo*',
-            'endereco.required' => 'Preencha o campo Endereço*',
+            'telefone.required' => 'Preencha o campo Sexo*',
+            'cnpj.required' => 'Preencha o campo Endereço*',
+            'cpf.required' => 'Preencha o campo Endereço*',
             'debito.required' => 'Preencha o campo Débito*'
         ];
     }
-
 
 
 

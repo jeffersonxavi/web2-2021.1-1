@@ -15,14 +15,28 @@
                     {{$message}}
                 </div>
                 @enderror
-                <label for="endereco">Endereço do cliente</label>
-                <input type="text" class="form-control @error('endereco') is-invalid @enderror" placeholder="Endereço" name="endereco" id="endereco" value="{{$cliente->endereco}}">
-                @error('endereco')
+                <label for="telefone">Telefone do cliente</label>
+                <input type="text" class="form-control @error('telefone') is-invalid @enderror" placeholder="Endereço" name="telefone" id="telefone" value="{{$cliente->telefone}}">
+                @error('telefone')
                 <div class="invalid-feedback">
                     {{$message}}
                 </div>
                 @enderror
-                <label for="debito">Endereço do cliente</label>
+                <label for="cpf">CPF do cliente</label>
+                <input type="text" class="form-control @error('cpf') is-invalid @enderror" placeholder="CPF" name="cpf" id="cpf" value="{{$cliente->cpf}}">
+                @error('cpf')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
+                <label for="cnpj">CNPJ do cliente</label>
+                <input type="text" class="form-control @error('cnpj') is-invalid @enderror" placeholder="CNPJ" name="cnpj" id="cnpj" value="{{$cliente->cnpj}}">
+                @error('cnpj')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
+                <label for="debito">Débito do cliente</label>
                 <input type="text" class="form-control @error('debito') is-invalid @enderror" placeholder="Debito" name="debito" id="debito" value="{{$cliente->debito}}">
                 @error('debito')
                 <div class="invalid-feedback">

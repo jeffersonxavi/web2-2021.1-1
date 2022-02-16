@@ -24,7 +24,7 @@ class StoreMotorRequest extends FormRequest
     public function rules()
     {
         return [
-                'motor' => 'required',
+                'potencia' => 'required',
 
                    
         ];
@@ -32,7 +32,7 @@ class StoreMotorRequest extends FormRequest
 
     public function messages(){
         return [
-            'motor' => 'Preencha o campo*',
+            'potencia' => 'Preencha o campo*',
         ];
     }
 }

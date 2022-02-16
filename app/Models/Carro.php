@@ -9,7 +9,7 @@ class Carro extends Model
 {
     use HasFactory;
     protected $table = "carros";
-    protected $fillable = ['carro'];
+    protected $fillable = ['modelo'];
 
 
     function produto(){

@@ -1,6 +1,9 @@
 @extends('layouts.main')
-@section('titulo','Lista de produtos')
+@section('titulo','Lista de Produtos')
 @section('conteudo')
+<div class="row">
+    <a href="{{route('produto.create')}}" class="btn btn-outline-info btn-rounded waves-effect">+</a>
+</div>
 <h4>Listar Produtos</h4>
 <table class="table">
     <thead>

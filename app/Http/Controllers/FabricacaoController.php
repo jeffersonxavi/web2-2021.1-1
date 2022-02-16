@@ -10,16 +10,16 @@ class FabricacaoController extends Controller
 {
     //
     public function show(){
-        $fabricacaos = Fabricacao::all();
-        echo $fabricacaos;
+        $fabricacoes = Fabricacao::all();
+        echo $fabricacoes;
     }
 
     public function index(){
-        $fabricacaos = Fabricacao::all();
-        return view('fabricacaos.index', ['fabricacaos'=>$fabricacaos]);
+        $fabricacoes = Fabricacao::all();
+        return view('fabricacoes.index', ['fabricacoes'=>$fabricacoes]);
     }
     public function create(){
-        return view('fabricacaos.create'); 
+        return view('fabricacoes.create'); 
     }
 
     public function store(StoreFabricacaoRequest $request)
@@ -28,23 +28,23 @@ class FabricacaoController extends Controller
         $fabricacao->ano = $request->ano;
         $fabricacao->save();
 
-        return redirect('fabricacaos.index');
+        return redirect('fabricacoes/index');
     }
 
     
     public function edit($id){
         $fabricacao = Fabricacao::findorFail($id);
-        return view('fabricacaos.edit', ['fabricacao'=>$fabricacao]);
+        return view('fabricacoes.edit', ['fabricacao'=>$fabricacao]);
     }
 
     public function update(StoreFabricacaoRequest $request){
         Fabricacao::find($request->id)->update($request->except('_method'));
-        return redirect('fabricacaos.index')->with('msg', 'fabricacao atualizada');
+        return redirect('fabricacoes/index')->with('msg', 'fabricacao atualizada');
     }
     
     public function destroy($id){
         Fabricacao::findorFail($id)->delete();
-        return redirect('fabricacaos.index')->with('msg', 'fabricacao excluída com sucesso');
+        return redirect('fabricacoes/index')->with('msg', 'fabricacao excluída com sucesso');
     }
 
 }

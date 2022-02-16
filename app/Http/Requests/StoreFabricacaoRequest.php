@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Requests;
-use  App\Rules\UpperCase;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreFornecedorRequest extends FormRequest
+class StoreFabricacaoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,20 +24,13 @@ class StoreFornecedorRequest extends FormRequest
     public function rules()
     {
         return [
-                'nome' => 'required',
-                'cnpj' => 'required',
-                'telefone' => 'required',
-                'endereco' => 'required'
-                   
+                'ano' => 'required',
         ];
     }
 
     public function messages(){
         return [
-            'nome.required' => 'Preencha o campo Nome*',
-            'cnpj.required' => 'Preencha o campo CNPJ*',
-            'endereco.required' => 'Preencha o campo Endereço*'
-
+            'ano' => 'Preencha o campo*',
         ];
     }
 }

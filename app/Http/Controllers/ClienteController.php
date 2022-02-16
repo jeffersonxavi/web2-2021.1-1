@@ -28,13 +28,8 @@ class ClienteController extends Controller
 
     public function store(StoreClienteRequest $request)
     {
-        $cliente= new Cliente();
-        $cliente->nome= $request->nome;
-        $cliente->telefone= $request->telefone;
-        $cliente->cpf= $request->cpf;
-        $cliente->cnpj= $request->cnpj;
-        $cliente->debito= $request->debito;
-        $cliente->save();
+        Cliente::create($request->all());
+        
         return redirect('/clientes/index');
     }
 

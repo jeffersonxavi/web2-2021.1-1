@@ -25,8 +25,6 @@ class StoreCarroRequest extends FormRequest
     {
         return [
                 'modelo' => 'required',
-
-                   
         ];
     }
 

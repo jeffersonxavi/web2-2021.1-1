@@ -32,7 +32,7 @@ class EntradaController extends Controller
         
         $entrada->save();
 
-        return redirect('entradas.index');
+        return redirect('entradas/index');
     }
 
     
@@ -43,12 +43,12 @@ class EntradaController extends Controller
 
     public function update(StoreEntradaRequest $request){
         Entrada::find($request->id)->update($request->except('_method'));
-        return redirect('entradas.index')->with('msg', 'entrada atualizada');
+        return redirect('entradas/index')->with('msg', 'entrada atualizada');
     }
     
     public function destroy($id){
         Entrada::findorFail($id)->delete();
-        return redirect('entradas.index')->with('msg', 'entrada excluída com sucesso');
+        return redirect('entradas/index')->with('msg', 'entrada excluída com sucesso');
     }
 
 }

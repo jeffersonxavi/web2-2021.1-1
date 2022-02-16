@@ -28,7 +28,7 @@ class MotorController extends Controller
         $motor->potencia = $request->potencia;
         $motor->save();
 
-        return redirect('motors.index');
+        return redirect('motors/index');
     }
 
     
@@ -39,12 +39,12 @@ class MotorController extends Controller
 
     public function update(StoreMotorRequest $request){
         Motor::find($request->id)->update($request->except('_method'));
-        return redirect('motors.index')->with('msg', 'motor atualizada');
+        return redirect('motors/index')->with('msg', 'motor atualizada');
     }
     
     public function destroy($id){
         Motor::findorFail($id)->delete();
-        return redirect('motors.index')->with('msg', 'motor excluída com sucesso');
+        return redirect('motors/index')->with('msg', 'motor excluída com sucesso');
     }
 
 }

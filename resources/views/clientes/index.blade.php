@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('titulo','Lista de clientes')
+@section('titulo','Lista de Clientes')
 @section('conteudo')
 <div class="row">
     <a href="{{route('cliente.create')}}" class="btn btn-outline-info btn-rounded waves-effect">+</a>
@@ -25,13 +25,14 @@
             <td>{{$cliente->telefone}}</td>
             <td>{{$cliente->debito}}</td>
             <td>
-                <a href="{{route('cliente.edit', [$cliente->id])}} ">Editar</a>
+                <a href="{{route('cliente.edit', [$cliente->id])}} "><input class="btn btn-danger btn-sm" value="EDITAR"></a>
             </td>
             <td>
                 <form action="{{route('cliente.destroy', [$cliente->id])}}" method="POST">
-                    @csrf
                     @method('DELETE')
-                    <input type="submit" value="deletar">
+                    @csrf
+                    <input type="submit" class="btn btn-secondary btn-sm" value="DELETAR">
+                </form>
             </td>
         </tr>
         @endforeach

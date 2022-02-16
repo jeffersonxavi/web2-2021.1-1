@@ -1,6 +1,9 @@
 @extends('layouts.main')
-@section('titulo','Lista de fornecedores')
+@section('titulo','Lista de Fornecedores')
 @section('conteudo')
+<div class="row">
+    <a href="{{route('fornecedor.create')}}" class="btn btn-outline-info btn-rounded waves-effect">+</a>
+</div>
 <h4>Listar Fornecedores</h4>
 <table class="table">
     <thead>
@@ -28,6 +31,7 @@
                     @method('DELETE')
                     <input type="submit" value="deletar" >
             </td>
+            </form>
         </tr>
         @endforeach
     </tbody>

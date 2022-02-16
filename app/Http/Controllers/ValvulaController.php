@@ -28,7 +28,7 @@ class ValvulaController extends Controller
         $valvula->quantidade = $request->quantidade;
         $valvula->save();
 
-        return redirect('valvulas.index');
+        return redirect('valvulas/index');
     }
 
     
@@ -39,12 +39,12 @@ class ValvulaController extends Controller
 
     public function update(StoreValvulaRequest $request){
         Valvula::find($request->id)->update($request->except('_method'));
-        return redirect('valvulas.index')->with('msg', 'valvula atualizada');
+        return redirect('valvulas/index')->with('msg', 'valvula atualizada');
     }
     
     public function destroy($id){
         Valvula::findorFail($id)->delete();
-        return redirect('valvulas.index')->with('msg', 'valvula excluída com sucesso');
+        return redirect('valvulas/index')->with('msg', 'valvula excluída com sucesso');
     }
 
 }

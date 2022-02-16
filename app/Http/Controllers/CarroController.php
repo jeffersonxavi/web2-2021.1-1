@@ -28,7 +28,7 @@ class CarroController extends Controller
         $carro->modelo = $request->modelo;
         $carro->save();
 
-        return redirect('carros.index');
+        return redirect('carros/index');
     }
 
     
@@ -39,12 +39,12 @@ class CarroController extends Controller
 
     public function update(StoreCarroRequest $request){
         Carro::find($request->id)->update($request->except('_method'));
-        return redirect('carros.index')->with('msg', 'carro atualizada');
+        return redirect('carros/index')->with('msg', 'carro atualizada');
     }
     
     public function destroy($id){
         Carro::findorFail($id)->delete();
-        return redirect('carros.index')->with('msg', 'carro excluída com sucesso');
+        return redirect('carros/index')->with('msg', 'carro excluída com sucesso');
     }
 
 }
