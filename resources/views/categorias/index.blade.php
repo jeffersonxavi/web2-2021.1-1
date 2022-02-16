@@ -20,7 +20,7 @@
         @foreach ($categorias as $categoria)
         <tr>
             <th scope="row">{{$categoria->id}}</td>
-            <td>{{$categoria->departamento}}</td>
+            <td>{{$categoria->categoria}}</td>
             <td>
                 <a href="{{route('categoria.edit', [$categoria->id])}} "><input class="btn btn-danger btn-sm" value="EDITAR"></a>
             </td>

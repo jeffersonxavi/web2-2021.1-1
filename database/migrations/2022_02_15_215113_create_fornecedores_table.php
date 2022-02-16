@@ -17,7 +17,7 @@ class CreateFornecedoresTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nome', 45);
-            $table->string('endereço', 30);
+            $table->string('endereco', 30);
             $table->string('telefone', 15);
             $table->string('cnpj', 15);
         });
