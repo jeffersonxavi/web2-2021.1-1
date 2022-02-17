@@ -37,6 +37,7 @@ class StoreFornecedorRequest extends FormRequest
         return [
             'nome.required' => 'Preencha o campo Nome*',
             'cnpj.required' => 'Preencha o campo CNPJ*',
+            'telefone.required' => 'Preencha o campo Telefone*',
             'endereco.required' => 'Preencha o campo Endereço*'
 
         ];
