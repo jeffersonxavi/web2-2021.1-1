@@ -4,6 +4,7 @@
 </h2>
 Projeto em Laravel inspirado no sistema desenvolvido na disciplina WEB1.
 
+Link do projeto hospedado: <a href="http://sistemaweb2.herokuapp.com/fornecedores/index" target="_blank">Aqui</a>
 
 
 ### Como rodar o projeto: #
