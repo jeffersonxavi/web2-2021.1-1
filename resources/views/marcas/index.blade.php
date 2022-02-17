@@ -21,14 +21,23 @@
         <tr>
             <th scope="row">{{$marca->id}}</td>
             <td>{{$marca->marca}}</td>
+
             <td>
-                <a href="{{route('marca.edit', [$marca->id])}} "><input class="btn btn-danger btn-sm" value="EDITAR"></a>
-            </td>
-            <td>
-                <form action="{{route('marca.destroy', [$marca->id])}}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <input type="submit" class="btn btn-secondary btn-sm" value="DELETAR">
+                <a id= "aform" href="{{route('marca.edit', [$marca->id])}} " class="btn btn-primary">EDITAR</a>
+
+                <a  id= "aform" class="btn btn-secondary" onclick="
+                var result = confirm('Você tem certeza que deseja excluir?');
+                
+                if(result){
+                    event.preventDefault();
+                    document.getElementById('delete-form-{{$marca->id}}').submit();
+                }">
+                    DELETE
+                </a>
+
+                <form  method="POST" id="delete-form-{{$marca->id}}" action="{{route('marca.destroy', [$marca->id])}}">
+                    {{csrf_field()}}
+                    <input type="hidden" name="_method" value="DELETE">
                 </form>
             </td>
 

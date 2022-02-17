@@ -21,14 +21,23 @@
         <tr>
             <th scope="row">{{$localizacao->id}}</td>
             <td>{{$localizacao->departamento}}</td>
+
             <td>
-                <a href="{{route('localizacao.edit', [$localizacao->id])}} "><input class="btn btn-danger btn-sm" value="EDITAR"></a>
-            </td>
-            <td>
-                <form action="{{route('localizacao.destroy', [$localizacao->id])}}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <input type="submit" class="btn btn-secondary btn-sm" value="DELETAR">
+                <a id= "aform" href="{{route('localizacao.edit', [$localizacao->id])}} " class="btn btn-primary">EDITAR</a>
+
+                <a  id= "aform" class="btn btn-secondary" onclick="
+                var result = confirm('Você tem certeza que deseja excluir?');
+                
+                if(result){
+                    event.preventDefault();
+                    document.getElementById('delete-form-{{$localizacao->id}}').submit();
+                }">
+                    DELETE
+                </a>
+
+                <form  method="POST" id="delete-form-{{$localizacao->id}}" action="{{route('localizacao.destroy', [$localizacao->id])}}">
+                    {{csrf_field()}}
+                    <input type="hidden" name="_method" value="DELETE">
                 </form>
             </td>
 

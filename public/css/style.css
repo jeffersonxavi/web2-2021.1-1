@@ -97,9 +97,9 @@ h4{
     text-decoration: none;
     color: #fff;
     width: 100px;
-    height: 50px;
+    height: 40px;
     text-align: center;
-    line-height: 50px
+    line-height: 40px
     
   }
   
@@ -123,4 +123,12 @@ h4{
     text-align: left;
     padding: 0 15px;
     width: 100%;
+  }
+
+  #aform{
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    line-height: 15px
+    
   }

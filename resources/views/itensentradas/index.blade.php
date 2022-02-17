@@ -21,14 +21,24 @@
             <td>{{$itensentrada->quantidade}}</td>
             <td>{{$itensentrada->id_entrada}}</td>
             <td>{{$itensentrada->id_produto}}</td>
+
             <td>
-            <a href="{{route('itensentrada.edit', [$itensentrada->id])}}">Editar</a>
-            </td>
-            <td>
-            <form action="{{route('itensentrada.destroy', [$itensentrada->id])}}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <input type="submit" value="deletar">
+                <a id= "aform" href="{{route('itensentrada.edit', [$itensentrada->id])}} " class="btn btn-primary">EDITAR</a>
+
+                <a  id= "aform" class="btn btn-secondary" onclick="
+                var result = confirm('Você tem certeza que deseja excluir?');
+                
+                if(result){
+                    event.preventDefault();
+                    document.getElementById('delete-form-{{$itensentrada->id}}').submit();
+                }">
+                    DELETE
+                </a>
+
+                <form  method="POST" id="delete-form-{{$itensentrada->id}}" action="{{route('itensentrada.destroy', [$itensentrada->id])}}">
+                    {{csrf_field()}}
+                    <input type="hidden" name="_method" value="DELETE">
+                </form>
             </td>
         </tr>
         @endforeach
