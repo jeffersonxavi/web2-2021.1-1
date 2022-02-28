@@ -4,7 +4,7 @@
 </h2>
 Projeto em Laravel (Sistema de Vendas)
 
-Link do projeto hospedado: <a href="http://sistemavendaweb.herokuapp.com/produtos/index" target="_blank">Aqui</a>
+Link do projeto hospedado: <a href="http://sistemavendaweb.herokuapp.com" target="_blank">Aqui</a>
 
 
 ### Como rodar o projeto: #
